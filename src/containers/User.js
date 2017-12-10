@@ -52,11 +52,11 @@ class User extends Component {
 
     const currentPage = parseInt(this.props.userPosts.page - 1, 10);
 
-    const pagnite = (
+    const pagnite = this.props.posts.docs.length > 0 ? (
       <div className="nav justify-content-end">
         <CustomPaginate currentPage={currentPage} totalPage={this.props.userPosts.pages} onPageChange={this.onPageChange} />
       </div>
-    );
+    ) : null;
 
     return (
       <div>

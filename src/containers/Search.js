@@ -51,11 +51,11 @@ class Search extends Component {
 
     var curPage = parseInt(this.props.posts.page - 1, 10)
 
-    const pagnite = (
+    const pagnite = this.props.posts.docs.length > 0 ? (
       <div className="nav justify-content-end">
         <CustomPaginate currentPage={curPage} totalPage={this.props.posts.pages} onPageChange={this.onPageChange}/>
       </div>
-    );
+    ) : null;
 
     return (
       <div>

@@ -121,7 +121,7 @@ class Statistics extends Component {
       }
     };
 
-    const chartContainer =this.refs.chart;
+    const chartContainer = this.refs.chart;
     while (chartContainer.firstChild) {
       chartContainer.removeChild(chartContainer.firstChild);
     }
@@ -139,9 +139,7 @@ class Statistics extends Component {
           <div className="form-row">
             <div className="col form-group">
               <select className="form-control" id="input-type" name="type" value={this.state.type} onChange={this.onTypeChange}>
-                <option value="posts">
-                  Posts
-                </option>
+                <option value="posts">Posts</option>
                 <option value="comments">Comments</option>
               </select>
             </div>
@@ -150,9 +148,7 @@ class Statistics extends Component {
                 <option value="hour">Hour</option>
                 <option value="dow">Day of Week</option>
                 <option value="dom">Day of Month</option>
-                <option value="month">
-                  Month
-                </option>
+                <option value="month">Month</option>
               </select>
             </div>
           </div>

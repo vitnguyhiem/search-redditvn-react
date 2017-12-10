@@ -1,4 +1,4 @@
-import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 // import { combineReducers as combineReducersUtils } from 'redux-utils';
 import { routerReducer, routerMiddleware } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';

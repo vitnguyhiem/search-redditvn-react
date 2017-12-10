@@ -167,10 +167,10 @@ export const fetchStatistics = (type, group) => (dispatch, getState) => {
     });
 }
 
-export const fetchTop = () => (dispatch, getState) => {
+export const fetchTop = (limit, group) => (dispatch, getState) => {
   dispatch(actions.main__ShowLoading());
   axios
-    .get(`${process.env.REACT_APP_SEARCH_REDDITVN_API_URI}/stats/top10`)
+    .get(`${process.env.REACT_APP_SEARCH_REDDITVN_API_URI}/stats/top/?limit=${limit}&group=${group}`)
     .then(response => {
       dispatch(actions.stats_top__ReceiveList(response.data));
       dispatch(actions.main__HideLoading());
