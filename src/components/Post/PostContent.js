@@ -36,9 +36,14 @@ class PostContent extends Component {
 
     postContainer.append(newnode);
     if (this.props.query) {
-      new Mark(this.refs.blogPostContainer).mark(this.props.query, {"separateWordSearch": false});
-      const reg = new RegExp(this.props.query, 'gim')
-      new Mark(this.refs.blogPostContainer).markRegExp(reg);
+      if (this.props.query.startsWith('regex:')) {
+        const regexString = this.props.query.substr(6);
+        const reg = new RegExp(regexString, 'gim')
+        new Mark(this.refs.blogPostContainer).markRegExp(reg);
+      }
+      else {
+        new Mark(this.refs.blogPostContainer).mark(this.props.query, {"separateWordSearch": false});
+      }
     }
   }
 
