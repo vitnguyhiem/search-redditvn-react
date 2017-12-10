@@ -18,12 +18,14 @@ const routermiddleware = routerMiddleware(history);
 
 let middleware = [thunk, routermiddleware];
 
-if (window.__REDUX_DEVTOOLS_EXTENSION__) {
-  const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-  middleware = composeEnhancers(applyMiddleware(...middleware));
-} else {
-  middleware = applyMiddleware(...middleware);
-}
+// if (window.__REDUX_DEVTOOLS_EXTENSION__) {
+//   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+//   middleware = composeEnhancers(applyMiddleware(...middleware));
+// } else {
+//   middleware = applyMiddleware(...middleware);
+// }
+
+middleware = applyMiddleware(...middleware);
 
 const store = createStore(reducers, {}, middleware);
 
