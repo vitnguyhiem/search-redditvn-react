@@ -14,8 +14,7 @@ class PostComment extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    var nextPostId = nextProps.postId;
-    if (nextPostId !== this.props.postId) {
+    if (this.props.postId !== nextProps.postId) {
       this.setState({ show_comment: false });
     }
   }

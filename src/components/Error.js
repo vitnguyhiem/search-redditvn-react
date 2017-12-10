@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 class Error extends Component {
   render() {
-    console.log(this.props.error);
     let errorMessage = "Something when wrong ...";
     if (this.props.error.response) {
       errorMessage = JSON.stringify(this.props.error.response.data, undefined, 2);

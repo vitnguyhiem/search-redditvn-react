@@ -6,10 +6,8 @@ import Error from '../components/Error'
 
 class Post extends Component {
   componentWillReceiveProps(nextProps) {
-    var nextPostId = nextProps.postId;
-    if (nextPostId !== this.props.postId) {
-      console.log('POST fetchPostById');
-      this.props.fetchPostById(nextPostId);
+    if (this.props.postId !== nextProps.postId) {
+      this.props.fetchPostById(nextProps.postId);
     }
   }
 

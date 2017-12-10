@@ -11,7 +11,7 @@ export const splitWord = (input, len = 80) => {
   let prev = 0;
 
   while (input[curr]) {
-    var cur = ++curr;
+    const cur = ++curr;
     if (input[cur] === ' ' || input[cur] === '.' || input[cur] === '/' || input.length === cur) {
       return input.substring(prev, curr);
     }

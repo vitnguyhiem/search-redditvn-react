@@ -36,7 +36,7 @@ class Search extends Component {
   };
 
   onPageChange = ({ selected }) => {
-    var newQueryString = { ...this.props.queryString, page: selected + 1 };
+    const newQueryString = { ...this.props.queryString, page: selected + 1 };
     this.props.push(this.props.location.pathname + '?' + querystring.stringify(newQueryString));
   };
 
@@ -49,7 +49,7 @@ class Search extends Component {
       return null;
     }
 
-    var curPage = parseInt(this.props.posts.page - 1, 10)
+    const curPage = parseInt(this.props.posts.page - 1, 10)
 
     const pagnite = this.props.posts.docs.length > 0 ? (
       <div className="nav justify-content-end">

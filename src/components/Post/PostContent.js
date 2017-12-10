@@ -25,12 +25,12 @@ class PostContent extends Component {
     postContainer.empty();
     let content = this.props.content || '';
     content = content.replace(/(?:\r\n|\r|\n)/g, '<br />');
-    var result = content.replace(/([ru]\/[a-z0-9\-_]+)/gi, function(match, p1, offset, string) {
-      var className = p1[0].toLowerCase() === 'r' ? 'redditvn-sub' : 'redditvn-user';
+    const result = content.replace(/([ru]\/[a-z0-9\-_]+)/gi, function(match, p1, offset, string) {
+      const className = p1[0].toLowerCase() === 'r' ? 'redditvn-sub' : 'redditvn-user';
       return '<a class="' + className + '" href="https://reddit.com/' + p1 + '" target="_blank">' + p1 + '</a>';
     });
 
-    var newnode = $('<div>', {
+    const newnode = $('<div>', {
       html: result
     });
 

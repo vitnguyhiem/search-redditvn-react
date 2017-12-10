@@ -32,7 +32,7 @@ class User extends Component {
   };
 
   onPageChange = ({ selected }) => {
-    var newQueryString = { ...this.props.queryString, page: selected + 1 };
+    const newQueryString = { ...this.props.queryString, page: selected + 1 };
     this.props.push(this.props.location.pathname + '?' + querystring.stringify(newQueryString));
   };
 
