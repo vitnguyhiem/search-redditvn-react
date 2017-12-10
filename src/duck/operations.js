@@ -1,5 +1,5 @@
 import * as actions from './actions';
-import { push } from 'react-router-redux';
+import { push, replace } from 'react-router-redux';
 import axios from 'axios';
 import querystring from 'querystring';
 
@@ -93,6 +93,14 @@ export const setSearch = query => {
 };
 
 export const fetchSearchPosts = (query, page, limit) => dispatch => {
+  if (query.startsWith('user:')) {
+    const userId = query.substr(5);
+    return dispatch(replace(`/user/${userId}`));
+  } else if (query.startsWith('post:')) {
+    const postId = query.substr(5);
+    return dispatch(replace(`/post/${postId}`));
+  }
+
   dispatch(actions.main__ShowLoading());
   axios
     .get(`${process.env.REACT_APP_SEARCH_REDDITVN_API_URI}/search?${querystring.stringify({q: query, page, limit})}`)

@@ -39,7 +39,7 @@ class Home extends Component {
       <div className="starter-template">
         <form className="pt-5 pb-5" onSubmit={this.onSubmitForm}>
           <div className="form-group">
-            <input
+            <input id="searchBox"
               className="form-control form-control-lg"
               name="q"
               onChange={this.onQueryChange}
