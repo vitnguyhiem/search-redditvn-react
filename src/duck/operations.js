@@ -67,7 +67,7 @@ export const fetchPostById = post_id => (dispatch, getState) => {
 
 export const fetchCommentByPostId = post_id => (dispatch, getState) => {
   axios
-    .get(`${process.env.REACT_APP_SEARCH_REDDITVN_API_URI}/comment/${post_id}`)
+    .get(`${process.env.REACT_APP_SEARCH_REDDITVN_API_URI}/post/${post_id}/comments`)
     .then(response => {
       dispatch(actions.post__ReceiveComment(response.data));
     })
